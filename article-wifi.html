@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何規劃居家 Wi-Fi | TDGPark 技術專欄</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="font-black text-2xl tracking-tighter text-slate-800">
+                TDG<span class="text-blue-600">Park</span>
+            </div>
+            <div class="flex items-center space-x-4 md:space-x-8 text-base font-bold text-slate-600">
+                <a href="index.html" class="hover:text-blue-600 transition">首頁</a>
+                <a href="services.html" class="hover:text-blue-600 transition">服務項目</a>
+                <a href="portfolio.html" class="hover:text-blue-600 transition">作品集</a>
+                <a href="blog.html" class="text-blue-600">專業知識</a>
+                <a href="contact.html" class="hover:text-blue-600 transition">聯絡方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-16 bg-white shadow-sm my-10 rounded-2xl">
+        <nav class="text-sm text-slate-400 mb-6">
+            <a href="blog.html" class="hover:underline">← 回到文章列表</a>
+        </nav>
+        
+        <header class="mb-10">
+            <span class="text-blue-600 font-bold text-sm uppercase tracking-widest">網路工程實務</span>
+            <h1 class="text-3xl md:text-4xl font-black mt-2 leading-tight">明明買了高價路由器，Wi-Fi 還是收不到？專業工程師告訴你三大關鍵</h1>
+            <div class="mt-4 text-slate-400 text-sm flex items-center">
+                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> 2024-05-21 • TDGPark 團隊撰寫
+            </div>
+        </header>
+
+        <article class="prose prose-slate max-w-none leading-relaxed space-y-8 text-slate-700">
+            <p class="text-lg font-medium text-slate-600">很多人以為 Wi-Fi 訊號不好，換一台最貴的分享器就能解決。但在 TDGPark 的實務經驗中，收訊問題往往不是設備「不夠強」，而是「放錯位」或「規劃錯」。</p>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                    <span class="w-2 h-8 bg-blue-600 mr-3 rounded"></span>一、 物理限制：牆壁是 Wi-Fi 的天敵
+                </h2>
+                <p>Wi-Fi 訊號本質上是電磁波，尤其是現在主流的 5GHz 頻段，雖然速度極快，但穿透力非常弱。水泥牆會衰減約 50%-70% 的訊號，而含鋼筋的結構牆幾乎可以完全阻斷訊號。</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                    <span class="w-2 h-8 bg-blue-600 mr-3 rounded"></span>二、 擺放位置：別把路由器「關起來」
+                </h2>
+                <p>我們常看到客戶為了美觀，把路由器塞進木作櫃子或金屬弱電箱。這不僅會造成散熱問題導致降速，金屬材質更會屏蔽訊號。建議將設備擺放在開放式層架，高度建議與人眼齊平。</p>
+            </section>
+
+            <section class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-600">
+                <h3 class="font-bold text-blue-800 mb-2">💡 工程師的私藏建議：</h3>
+                <p class="text-blue-900/80 text-sm">若環境允許，務必採用「有線回傳 (Ethernet Backhaul)」，也就是 Mesh 節點間透過實體網路線連接，穩定度是純無線連接的 10 倍以上。</p>
+            </section>
+        </article>
+
+        <footer class="mt-16 pt-8 border-t border-slate-100 text-center">
+            <p class="text-slate-500 mb-6">您的空間也遇到收訊死角嗎？</p>
+            <a href="contact.html" class="inline-block bg-slate-900 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-600 transition">預約免費現場評估</a>
+        </footer>
+    </main>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
