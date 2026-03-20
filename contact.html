@@ -9,21 +9,77 @@
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans">
 
-    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-100">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="font-black text-2xl tracking-tighter text-slate-800">
-                TDG<span class="text-blue-600">Park</span>
-            </div>
-            
-            <div class="flex items-center space-x-3 md:space-x-6 text-sm md:text-base font-semibold text-slate-600">
-                <a href="index.html" class="hover:text-blue-600 transition px-1">首頁</a>
-                <a href="services.html" class="hover:text-blue-600 transition px-1">服務項目</a>
-                <a href="portfolio.html" class="hover:text-blue-600 transition px-1">作品集</a>
-                <a href="blog.html" class="hover:text-blue-600 transition px-1">專業知識</a>
-                <a href="contact.html" class="hover:text-blue-600 transition px-1 border-b-2 border-blue-500 text-blue-600">聯絡方式</a>
-            </div>
+<nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="index.html" class="font-black text-2xl tracking-tighter text-slate-800">
+            TDG<span class="text-blue-600">Park</span>
+        </a>
+        
+        <div class="hidden md:flex items-center space-x-8 text-base font-bold text-slate-600">
+            <a href="index.html" class="hover:text-blue-600 transition">首頁</a>
+            <a href="services.html" class="hover:text-blue-600 transition">服務項目</a>
+            <a href="portfolio.html" class="hover:text-blue-600 transition">作品集</a>
+            <a href="blog.html" class="hover:text-blue-600 transition">專業知識</a>
+            <a href="contact.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">聯絡方式</a>
         </div>
-    </nav>>
+
+        <button id="menu-btn" class="md:hidden text-slate-600 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition">
+            <i data-lucide="menu" id="icon-menu" class="w-7 h-7"></i>
+            <i data-lucide="x" id="icon-close" class="w-7 h-7 hidden"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-50 shadow-xl overflow-hidden transition-all duration-300">
+        <div class="flex flex-col p-6 space-y-6 font-bold text-slate-600 text-lg">
+            <a href="index.html" class="flex items-center space-x-3 hover:text-blue-600 transition">
+                <i data-lucide="home" class="w-5 h-5"></i> <span>首頁</span>
+            </a>
+            <a href="services.html" class="flex items-center space-x-3 hover:text-blue-600 transition">
+                <i data-lucide="briefcase" class="w-5 h-5"></i> <span>服務項目</span>
+            </a>
+            <a href="portfolio.html" class="flex items-center space-x-3 hover:text-blue-600 transition">
+                <i data-lucide="camera" class="w-5 h-5"></i> <span>作品集</span>
+            </a>
+            <a href="blog.html" class="flex items-center space-x-3 hover:text-blue-600 transition">
+                <i data-lucide="book-open" class="w-5 h-5"></i> <span>專業知識</span>
+            </a>
+            <a href="contact.html" class="flex items-center space-x-3 text-blue-600 bg-blue-50 p-3 rounded-xl transition">
+                <i data-lucide="phone" class="w-5 h-5"></i> <span>聯絡方式</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    btn.addEventListener('click', () => {
+        const isHidden = menu.classList.contains('hidden');
+        
+        if (isHidden) {
+            menu.classList.remove('hidden');
+            iconMenu.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+        } else {
+            menu.classList.add('hidden');
+            iconMenu.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+        }
+    });
+
+    // 點擊連結後自動關閉選單 (防止在同一頁跳轉時選單沒收回去)
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            iconMenu.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+        });
+    });
+</script>
 
     <main class="max-w-6xl mx-auto px-6 py-20">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
