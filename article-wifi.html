@@ -18,13 +18,13 @@
                 <a href="index.html" class="hover:text-blue-600 transition px-1">首頁</a>
                 <a href="services.html" class="hover:text-blue-600 transition px-1">服務項目</a>
                 <a href="portfolio.html" class="hover:text-blue-600 transition px-1">作品集</a>
-                <a href="blog.html" class="text-blue-600 px-1">專業知識</a>
+                <a href="blog.html" class="text-blue-600 px-1 border-b-2 border-blue-600">專業知識</a>
                 <a href="contact.html" class="hover:text-blue-600 transition px-1">聯絡方式</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
+    <main class="max-w-6xl mx-auto px-6 py-12 md:py-20">
         
         <nav class="flex items-center space-x-2 text-sm text-slate-400 mb-8">
             <a href="blog.html" class="hover:text-blue-600 transition">專業知識</a>
@@ -33,16 +33,16 @@
         </nav>
 
         <article class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
-            <header class="p-8 md:p-12 border-b border-slate-50 bg-slate-900 text-white">
-                <div class="flex items-center space-x-2 text-blue-400 font-bold text-sm uppercase tracking-widest mb-4">
+            <header class="p-8 md:p-16 border-b border-slate-50 bg-slate-900 text-white">
+                <div class="flex items-center space-x-2 text-blue-400 font-bold text-sm uppercase tracking-widest mb-6">
                     <i data-lucide="zap" class="w-4 h-4"></i>
                     <span>TDGPark 專業觀點</span>
                 </div>
-                <h1 class="text-3xl md:text-5xl font-black leading-tight">
+                <h1 class="text-3xl md:text-5xl font-black leading-tight max-w-4xl">
                     明明買了高價路由器，Wi-Fi 還是收不到？專業工程師告訴你三大關鍵
                 </h1>
-                <div class="mt-8 flex items-center text-slate-400 text-sm">
-                    <div class="flex items-center mr-6">
+                <div class="mt-10 flex items-center text-slate-400 text-sm">
+                    <div class="flex items-center mr-8">
                         <i data-lucide="calendar" class="w-4 h-4 mr-2"></i> 2024-05-21
                     </div>
                     <div class="flex items-center">
@@ -51,62 +51,77 @@
                 </div>
             </header>
 
-            <div class="p-8 md:p-12 text-slate-700 space-y-6 text-base leading-relaxed">
-                <p class="font-bold text-lg text-slate-900 border-l-4 border-blue-600 pl-6 mb-8">
-                    很多人以為 Wi-Fi 訊號不好，換一台最貴的分享器就能解決。但在實務經驗中，收訊問題往往不是設備「不夠強」，而是「放錯位置」或「規劃錯誤」。
-                </p>
-
-                <section>
-                    <h2 class="text-2xl font-black text-slate-900 mb-4">一、 物理限制：牆壁是 Wi-Fi 的天敵</h2>
-                    <p class="mb-4">
-                        Wi-Fi 訊號本質上是電磁波，穿透力會隨著阻隔物材質大幅衰減：
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li><strong class="text-slate-900">水泥牆：</strong> 衰減約 50%-70%。</li>
-                        <li><strong class="text-slate-900">結構牆（含鋼筋）：</strong> "幾乎"完全阻斷 5GHz 以上的高頻訊號。</li>
-                        <li><strong class="text-slate-900">木板/玻璃：</strong> 衰減相對輕微，但仍有影響。</li>
-                        <li><strong class="text-slate-900">工程師建議：</strong> 路由器的位置應盡量處於空間的「中心點」，且避開廚房（微波爐干擾）與密閉式的弱電箱。</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-black text-slate-900 mb-4">二、 擺放位置：別把路由器「關起來」</h2>
-                    <p class="mb-4">
-                        為了美觀，許多客戶會把路由器塞進木作櫃子或金屬收納箱。這會造成兩大問題：
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li><strong class="text-slate-900">熱量問題：</strong> 設備過熱會導致降速甚至當機。</li>
-                        <li><strong class="text-slate-900">金屬屏蔽：</strong> 金屬箱體會形成「法拉第籠」效應，訊號直接被悶在裡面。</li>
-                        <li><strong class="text-slate-900">工程師建議：</strong> 將設備擺放在開放式層架，高度建議與人眼齊平，避開地面與角落。</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-black text-slate-900 mb-4">三、 坪數大、房間多？放棄單機，改用 Mesh</h2>
-                    <p class="mb-4">
-                        如果你的家是長條形、透天厝或是超過 30 坪的多隔間公寓，單一台路由器絕對無法覆蓋。
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 ml-4">
-                        <li><strong class="text-slate-900">傳統訊號擴展器 (Repeater)：</strong> 雖然能延伸訊號，但頻寬會減半，且切換時會斷線。</li>
-                        <li><strong class="text-slate-900">Mesh Wi-Fi 系統：</strong> 這是目前的最佳方案。多台節點自動組成網狀網路，你在家走動時會自動切換到最強訊號，且速度不打折。</li>
-                        <li><strong class="text-slate-900">工程師建議：</strong> 若環境允許，務必採用 「有線回程 (Ethernet Backhaul)」，也就是節點間透過實體網路線連接，穩定度也比無線連接來的高，這也是為什麼 TDGPark 堅持在水電規劃階段就要預留網路線的原因。</li>
-                    </ul>
-                </section>
+            <div class="p-8 md:p-20 text-slate-700 space-y-12">
                 
-                  <div class="mt-16 bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <h3 class="text-xl font-bold mb-4 text-slate-900">需要專業的場域規劃嗎？</h3>
-                    <p class="text-slate-600 mb-6 text-base">
-                        網路規劃不只是買設備，更包含線路巡檢、干擾源分析與頻段設定。如果您也飽受斷網之苦，歡迎與我們聯繫，為您的空間打造無死角的網路環境。
+                <div class="max-w-3xl mx-auto space-y-12 text-base leading-loose">
+                    
+                    <p class="font-bold text-lg text-slate-900 border-l-4 border-blue-600 pl-6 mb-12">
+                        很多人以為 Wi-Fi 訊號不好，換一台最貴的分享器就能解決。但在實務經驗中，收訊問題往往不是設備「不夠強」，而是「放錯位置」或「規劃錯誤」。
                     </p>
-                    <a href="contact.html" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
-                        聯繫 TDGPark 免費諮詢
-                    </a>
-                </div>
-            </div>
+
+                    <section>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6 flex items-center">
+                            <span class="text-blue-600 mr-3">01.</span> 物理限制：牆壁是 Wi-Fi 的天敵
+                        </h2>
+                        <p class="mb-6">Wi-Fi 訊號本質上是電磁波，穿透力會隨著阻隔物材質大幅衰減：</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mr-4 mt-1"></i> <span><strong class="text-slate-900">水泥牆：</strong> 衰減約 50%-70%。</span></li>
+                            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mr-4 mt-1"></i> <span><strong class="text-slate-900">結構牆（含鋼筋）：</strong> 幾乎完全阻斷 5GHz 以上的高頻訊號。</span></li>
+                            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 mr-4 mt-1"></i> <span><strong class="text-slate-900">木板/玻璃：</strong> 衰減相對輕微，但仍有影響。</span></li>
+                        </ul>
+                        <div class="mt-8 p-6 bg-blue-50 rounded-2xl flex items-start">
+                            <i data-lucide="lightbulb" class="w-6 h-6 text-blue-600 mr-4 mt-1"></i>
+                            <p class="text-blue-900 font-medium"><strong>工程師建議：</strong> 路由器位置應處於空間「中心點」，且避開廚房（微波爐干擾）與密閉弱電箱。</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6 flex items-center">
+                            <span class="text-blue-600 mr-3">02.</span> 擺放位置：別把路由器「關起來」
+                        </h2>
+                        <p class="mb-6">為了美觀，許多客戶會把路由器塞進木作櫃子或金屬收納箱。這會造成兩大問題：</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="p-6 border border-slate-100 rounded-2xl bg-slate-50/50">
+                                <h4 class="font-bold text-slate-900 mb-2 flex items-center"><i data-lucide="thermometer" class="w-4 h-4 mr-2 text-red-500"></i>熱量問題</h4>
+                                <p class="text-sm">設備過熱會導致晶片降速甚至頻繁當機。</p>
+                            </div>
+                            <div class="p-6 border border-slate-100 rounded-2xl bg-slate-50/50">
+                                <h4 class="font-bold text-slate-900 mb-2 flex items-center"><i data-lucide="radio" class="w-4 h-4 mr-2 text-red-500"></i>金屬屏蔽</h4>
+                                <p class="text-sm">金屬箱體會形成屏蔽效應，訊號直接被悶在裡面。</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-blue-50 rounded-2xl flex items-start">
+                            <i data-lucide="lightbulb" class="w-6 h-6 text-blue-600 mr-4 mt-1"></i>
+                            <p class="text-blue-900 font-medium"><strong>工程師建議：</strong> 將設備擺放在開放式層架，高度與人眼齊平，避開地面與牆角。</p>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-6 flex items-center">
+                            <span class="text-blue-600 mr-3">03.</span> 坪數大、房間多？放棄單機，改用 Mesh
+                        </h2>
+                        <p class="mb-6">如果您的家是長條形、透天厝或是超過 30 坪的多隔間公寓，單一台路由器絕對無法全面覆蓋。</p>
+                        <div class="space-y-4 mb-8">
+                            <p class="p-4 border-l-4 border-slate-200"><strong>Mesh Wi-Fi 系統：</strong> 目前最佳方案。多台節點自動組網，走動時自動切換最強訊號。</p>
+                            <p class="p-4 border-l-4 border-blue-600 bg-blue-50/30"><strong>工程師建議：</strong> 務必採用「有線回傳 (Ethernet Backhaul)」，穩定度遠高於無線連接。</p>
+                        </div>
+                    </section>
+
+                    <div class="mt-20 bg-slate-900 p-10 md:p-16 rounded-[2rem] text-white text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-6">需要專業的場域規劃嗎？</h3>
+                        <p class="text-slate-400 mb-10 max-w-xl mx-auto text-base">
+                            網路規劃不只是買設備，更包含線路巡檢、干擾源分析與頻段設定。
+                        </p>
+                        <a href="contact.html" class="inline-block bg-blue-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-blue-500 transition shadow-2xl">
+                            聯繫 TDGPark 免費諮詢
+                        </a>
+                    </div>
+
+                </div> </div>
         </article>
 
         <div class="mt-12 text-center">
-            <a href="blog.html" class="text-slate-400 hover:text-blue-600 transition flex items-center justify-center">
+            <a href="blog.html" class="text-slate-400 hover:text-blue-600 transition flex items-center justify-center font-medium">
                 <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> 返回專業知識列表
             </a>
         </div>
