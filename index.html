@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDGPark | 打造穩定高效的數位基礎設施</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* 實現漸層文字效果 */
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-black text-2xl tracking-tighter text-slate-800">
+                TDG<span class="text-blue-600">Park</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-base font-bold text-slate-600">
+                <a href="index.html" class="text-blue-600 transition border-b-2 border-blue-600">首頁</a>
+                <a href="services.html" class="hover:text-blue-600 transition px-1">服務項目</a>
+                <a href="portfolio.html" class="hover:text-blue-600 transition px-1">實績案例</a>
+                <a href="blog.html" class="hover:text-blue-600 transition px-1">實務分享</a>
+                <a href="contact.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">聯絡方式</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-slate-600 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition">
+                <i data-lucide="menu" id="icon-menu" class="w-7 h-7"></i>
+                <i data-lucide="x" id="icon-close" class="w-7 h-7 hidden"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-50 shadow-xl overflow-hidden">
+            <div class="flex flex-col p-6 space-y-4 font-bold text-slate-600 text-lg">
+                <a href="index.html" class="text-blue-600 bg-blue-50 p-3 rounded-xl">首頁</a>
+                <a href="services.html" class="p-3">服務項目</a>
+                <a href="portfolio.html" class="p-3">實績案例</a>
+                <a href="blog.html" class="p-3">實務分享</a>
+                <a href="contact.html" class="p-3 text-blue-600">聯絡方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative py-24 px-6 overflow-hidden bg-white">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight text-slate-900">
+                打造穩定高效的<br><span class="gradient-text">數位基礎設施</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
+                TDGPark 提供從網路佈線、監控系統到室內水電整合的一站式技術支援。我們不只維護設備，更在優化您的工作環境。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="services.html" class="bg-slate-900 text-white px-10 py-4 rounded-xl font-bold hover:bg-slate-800 transition shadow-xl hover:-translate-y-1">探索服務項目</a>
+                <a href="contact.html" class="bg-blue-50 text-blue-700 px-10 py-4 rounded-xl font-bold hover:bg-blue-100 transition hover:-translate-y-1">立即預約諮詢</a>
+            </div>
+        </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-0 opacity-20 pointer-events-none">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-400 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-emerald-400 rounded-full blur-[120px]"></div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800">核心技術領域</h2>
+                <div class="w-16 h-1.5 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="network" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">電腦網路</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">企業級連網優化與穩定佈線方案。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">通訊監控</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">高畫質影像防護，保障環境安全。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="cpu" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">OA/OT/IoT</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">智慧設備整合與自動化管理。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="database" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">機櫃工程</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">標準化設備收納與機房散熱設計。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-5xl mx-auto px-6">
+        <div class="bg-white rounded-3xl p-10 md:p-16 border border-slate-100 shadow-sm">
+            <h2 class="text-3xl font-bold mb-12 text-center">為什麼選擇 TDGPark？</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="flex items-start space-x-4">
+                    <div class="bg-yellow-100 p-3 rounded-lg"><i data-lucide="zap" class="w-6 h-6 text-yellow-600"></i></div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-3 text-slate-800">一站式整合</h4>
+                        <p class="text-slate-600 leading-relaxed">打破資訊與工程隔閡。從水電規劃到防火牆設定，您不需要對接多個窗口，專注於您的業務成長。</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-lg"><i data-lucide="award" class="w-6 h-6 text-blue-600"></i></div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-3 text-slate-800">專業品質</h4>
+                        <p class="text-slate-600 leading-relaxed">我們堅持使用高品質耗材與標準化施工流程，無論規模大小，細節決定了系統的長期穩定性。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="font-black text-2xl text-white tracking-tighter">TDG<span class="text-blue-500">Park</span></div>
+            <div class="flex space-x-6 text-sm font-medium">
+                <a href="#" class="hover:text-white transition">服務政策</a>
+                <a href="#" class="hover:text-white transition">隱私條款</a>
+                <a href="contact.html" class="hover:text-white transition">聯絡我們</a>
+            </div>
+            <p class="text-xs">&copy; 2026 TDGPark Technology Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // 漢堡選單邏輯
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconClose = document.getElementById('icon-close');
+
+        btn.addEventListener('click', () => {
+            const isHidden = menu.classList.contains('hidden');
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                iconMenu.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
