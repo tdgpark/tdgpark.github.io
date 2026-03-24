@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服務項目 | TDGPark 專業資訊與工程服務</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-black text-2xl tracking-tighter text-slate-800">
+                TDG<span class="text-blue-600">Park</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-base font-bold text-slate-600">
+                <a href="index.html" class="hover:text-blue-600 transition">首頁</a>
+                <a href="services.html" class="text-blue-600 transition border-b-2 border-blue-600 px-1">服務項目</a>
+                <a href="portfolio.html" class="hover:text-blue-600 transition">實績案例</a>
+                <a href="blog.html" class="hover:text-blue-600 transition">實務分享</a>
+                <a href="contact.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">聯絡方式</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-slate-600 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition">
+                <i data-lucide="menu" id="icon-menu" class="w-7 h-7"></i>
+                <i data-lucide="x" id="icon-close" class="w-7 h-7 hidden"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-50 shadow-xl overflow-hidden">
+            <div class="flex flex-col p-6 space-y-4 font-bold text-slate-600 text-lg">
+                <a href="index.html" class="p-3">首頁</a>
+                <a href="services.html" class="text-blue-600 bg-blue-50 p-3 rounded-xl">服務項目</a>
+                <a href="portfolio.html" class="p-3">實績案例</a>
+                <a href="blog.html" class="p-3">實務分享</a>
+                <a href="contact.html" class="p-3 text-blue-600">聯絡方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-slate-900 py-20 text-center text-white relative overflow-hidden">
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">專業<span class="text-blue-400">服務範圍</span></h1>
+            <p class="text-slate-400 max-w-2xl mx-auto px-6 text-lg">提供從硬體維護、網路佈建到室內整合工程的一站式解決方案</p>
+        </div>
+        <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px]"></div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-16">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <i data-lucide="monitor" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-800">電腦硬體與數據維修</h3>
+                <ul class="space-y-4 text-slate-600 flex-grow">
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>桌上型電腦 / 微型主機 / 筆記型電腦組裝</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>系統效能優化與硬體改裝升級</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>周邊設備定期保養與故障排除</span></li>
+                    <li class="flex items-start"><i data-lucide="database" class="w-5 h-5 text-red-500 mr-3 mt-0.5 flex-shrink-0"></i> <span class="font-semibold text-slate-800">儲存設備檔案救援 (HDD/SSD/NAS)</span></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                <div class="w-14 h-14 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                    <i data-lucide="layout-dashboard" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-800">辦公環境規劃及設備部署</h3>
+                <ul class="space-y-4 text-slate-600 flex-grow">
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>電腦 / 印表機 / 投影機採購與安裝</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>總機系統 / 對講機工程規劃</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>設備共享網段規劃與權限設定</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>遠端辦公系統 (VPN/Remote Desktop)</span></li>
+                </ul>
+            </div>
+            
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <i data-lucide="wifi" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-800">監控系統與網路工程</h3>
+                <ul class="space-y-4 text-slate-600 flex-grow">
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>監視器 (CCTV/IP Cam) 監控系統規劃安裝</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>企業與住家有線網路實體佈線 (Cat.6)</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>高速無線網路 (Wi-Fi 6/7) 場域架設</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>網路漫遊 (Roaming) 與 Mesh 環境優化</span></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+                <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                    <i data-lucide="server" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-800">機房設備與資安架構</h3>
+                <ul class="space-y-4 text-slate-600 flex-grow">
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>標準機櫃設置與線路整理標籤工程</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>企業防火牆 (Firewall) 部署與過濾設定</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>路由器 (Router) 與交換器 (Switch) 配置</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>VPN 遠端接入與多點跨區連網規劃</span></li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group md:col-span-2 lg:col-span-1">
+                <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <i data-lucide="wrench" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-slate-800">水電規劃與室內裝修整合</h3>
+                <ul class="space-y-4 text-slate-600 flex-grow">
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>專業水電工程規劃與弱電整合施工</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>電力負載評估與專用迴路配置工程</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>室內設計裝修諮詢與整合監工服務</span></li>
+                    <li class="flex items-start"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0"></i> <span>辦公室/居家空間動線優化建議</span></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="mt-20 text-center bg-gradient-to-br from-blue-600 to-indigo-700 p-12 rounded-[3rem] text-white shadow-2xl relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-3xl font-extrabold mb-4">需要針對您的場域進行專屬規劃嗎？</h2>
+                <p class="mt-4 text-blue-100 text-lg">我們提供免費初步諮詢，為您量身打造最合適的技術方案</p>
+                <a href="contact.html" class="mt-8 inline-block bg-white text-blue-600 px-10 py-4 rounded-full font-black hover:bg-blue-50 transition transform hover:scale-105 shadow-lg">立即聯繫我們</a>
+            </div>
+            <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+
+    </main>
+
+    <footer class="py-12 text-center text-slate-400 text-sm border-t border-slate-200">
+        <div class="font-black text-xl text-slate-700 mb-2">TDG<span class="text-blue-600">Park</span></div>
+        &copy; 2026 TDGPark Technology Studio. All rights reserved.
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // 漢堡選單切換邏輯
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconClose = document.getElementById('icon-close');
+
+        btn.addEventListener('click', () => {
+            const isHidden = menu.classList.contains('hidden');
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                iconMenu.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
