@@ -162,16 +162,24 @@
 
                         <div class="space-y-2">
                             <label class="text-sm font-bold text-slate-600 ml-1">問題描述或特殊需求</label>
-                            <textarea name="詳細內容" rows="4" placeholder="請簡述您的情況..." class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"></textarea>
+                            <textarea name="message" rows="4" placeholder="請簡述您的情況..." class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full py-5 bg-blue-600 text-white font-black text-lg rounded-2xl shadow-lg hover:bg-blue-700 hover:-translate-y-1 transition transform active:scale-95">
-                            送出諮詢申請
+                        <button type="submit" id="submit-btn" class="w-full py-5 bg-blue-600 text-white font-black text-lg rounded-2xl shadow-lg hover:bg-blue-700 hover:-translate-y-1 transition transform active:scale-95 flex justify-center items-center">
+                            <span id="btn-text">送出諮詢申請</span>
                         </button>
                     </form>
+
+                    <div id="success-msg" class="hidden absolute inset-0 bg-white/95 rounded-[2.5rem] flex flex-col items-center justify-center text-center p-8 z-20">
+                        <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-6">
+                            <i data-lucide="check-circle-2" class="w-12 h-12"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-slate-800 mb-2">傳送成功！</h4>
+                        <p class="text-slate-500 mb-8">感謝您的諮詢，我們將會盡快與您聯絡。</p>
+                        <button onclick="location.reload()" class="text-blue-600 font-bold hover:underline">再次填寫</button>
+                    </div>
                 </div>
             </div>
-        </div>
     </main>
 
     <footer class="py-12 text-center text-slate-400 text-sm border-t border-slate-200 bg-white">
@@ -180,25 +188,59 @@
     </footer>
 
     <script>
-        lucide.createIcons();
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const iconMenu = document.getElementById('icon-menu');
-        const iconClose = document.getElementById('icon-close');
+    lucide.createIcons();
 
-        // 修復：點擊選單開關邏輯
-        btn.addEventListener('click', () => {
-            const isHidden = menu.classList.contains('hidden');
-            if (isHidden) {
-                menu.classList.remove('hidden');
-                iconMenu.classList.add('hidden');
-                iconClose.classList.remove('hidden');
+    // 手機版選單邏輯
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+
+    btn.addEventListener('click', () => {
+        const isHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        iconMenu.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+    });
+
+    // --- Formspree AJAX 送出邏輯 ---
+    const form = document.getElementById("contact-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const btnText = document.getElementById("btn-text");
+    const successMsg = document.getElementById("success-msg");
+
+    async function handleSubmit(event) {
+        event.preventDefault(); // 攔截跳轉
+        
+        const data = new FormData(event.target);
+        btnText.innerText = "傳送中...";
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                // 送出成功：顯示成功畫面
+                successMsg.classList.remove('hidden');
+                form.classList.add('opacity-0');
             } else {
-                menu.classList.add('hidden');
-                iconMenu.classList.remove('hidden');
-                iconClose.classList.add('hidden');
+                response.json().then(data => {
+                    alert("抱歉，發生錯誤。請稍後再試，或直接使用 LINE 聯絡我們。");
+                });
             }
+        }).catch(error => {
+            alert("網路連線異常，請檢查您的網路環境。");
+        }).finally(() => {
+            btnText.innerText = "送出諮詢申請";
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
         });
-    </script>
+    }
+    
+    form.addEventListener("submit", handleSubmit);
+</script>
 </body>
 </html>
