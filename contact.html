@@ -224,6 +224,7 @@
                     headers: { 'Accept': 'application/json' }
                 }).then(response => {
                     if (response.ok) {
+                        form.reset();
                         successMsg.classList.remove('hidden');
                         form.classList.add('opacity-0');
                     } else {
