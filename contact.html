@@ -161,7 +161,7 @@
 
                         <div class="space-y-2">
                             <label class="text-sm font-bold text-slate-600 ml-1">問題描述或特殊需求</label>
-                            <textarea name="message" rows="4" placeholder="請簡述您的情況..." class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"></textarea>
+                            <textarea name="message" id="message" rows="4" placeholder="請簡述您的情況..." required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition"></textarea>
                         </div>
 
                         <button type="submit" id="submit-btn" class="w-full py-5 bg-blue-600 text-white font-black text-lg rounded-2xl shadow-lg hover:bg-blue-700 hover:-translate-y-1 transition transform active:scale-95 flex justify-center items-center">
@@ -188,56 +188,82 @@
     </footer>
 
     <script>
-        lucide.createIcons();
+    lucide.createIcons();
 
-        // 手機版選單邏輯
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const iconMenu = document.getElementById('icon-menu');
-        const iconClose = document.getElementById('icon-close');
+    // 手機版選單邏輯
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
 
+    if (btn) {
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
             iconMenu.classList.toggle('hidden');
             iconClose.classList.toggle('hidden');
         });
+    }
 
-        // AJAX 送出邏輯
-        const form = document.getElementById("contact-form");
-        const submitBtn = document.getElementById("submit-btn");
-        const btnText = document.getElementById("btn-text");
-        const successMsg = document.getElementById("success-msg");
+    // --- Formspree 傳送與防呆驗證邏輯 ---
+    const form = document.getElementById("contact-form");
+    const submitBtn = document.getElementById("submit-btn");
+    const btnText = document.getElementById("btn-text");
+    const successMsg = document.getElementById("success-msg");
 
-        if (form) {
-            form.addEventListener("submit", async function(event) {
-                event.preventDefault();
+    if (form) {
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault(); 
+
+            const formData = new FormData(event.target);
+            
+            // --- 強化版防呆檢查 ---
+            const name = formData.get("name")?.trim();
+            const phone = formData.get("phone")?.trim();
+            const message = formData.get("message")?.trim();
+
+            // 只要其中一個沒填，就攔截
+            if (!name || !phone || !message) {
+                alert("請完整填寫姓名、電話及需求描述，好讓我們能盡快聯繫您！");
                 
-                const data = new FormData(event.target);
-                btnText.innerText = "傳送中...";
-                submitBtn.disabled = true;
-                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                // 自動幫他聚焦到第一個沒填的地方
+                if (!name) event.target.querySelector('input[name="name"]').focus();
+                else if (!phone) event.target.querySelector('input[name="phone"]').focus();
+                else if (!message) event.target.querySelector('textarea[name="message"]').focus();
+                
+                return; 
+            }
 
-                fetch(event.target.action, {
-                    method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                }).then(response => {
-                    if (response.ok) {
-                        form.reset();
-                        successMsg.classList.remove('hidden');
-                        form.classList.add('opacity-0');
-                    } else {
-                        alert("發生錯誤，請稍後再試。");
-                    }
-                }).catch(error => {
-                    alert("連線失敗，請檢查網路。");
-                }).finally(() => {
-                    btnText.innerText = "送出諮詢申請";
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                });
+            // 檢查是否至少勾選了一個服務項目 (Checkbox)
+            const services = formData.getAll("service");
+            if (services.length === 0) {
+                alert("請至少勾選一項感興趣的服務內容！");
+                return;
+            }
+
+            // --- 開始執行送出程序 ---
+            btnText.innerText = "傳送中...";
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset(); 
+                    successMsg.classList.remove('hidden');
+                    form.classList.add('opacity-0');
+                } else {
+                    alert("抱歉，發生錯誤。請稍後再試，或直接使用 LINE 聯絡我們。");
+                }
+            }).catch(error => {
+                alert("網路連線異常，請檢查您的網路環境。");
+            }).finally(() => {
+                btnText.innerText = "送出諮詢申請";
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
             });
-        }
-    </script>
-</body>
-</html>
+        });
+    }
+</script>
